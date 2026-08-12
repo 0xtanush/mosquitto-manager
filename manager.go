@@ -3,7 +3,7 @@ package mosquitto
 import (
 	"context"
 	"errors"
-	"os"
+	"os/user"
 	"runtime"
 	"time"
 )
@@ -121,7 +121,7 @@ func (m *Manager) withServiceTimeout(ctx context.Context) (context.Context, cont
 
 func currentOS() string { return runtime.GOOS }
 func currentUser() string {
-	if u, err := os.UserCurrent(); err == nil {
+	if u, err := user.Current(); err == nil {
 		return u.Username
 	}
 	return ""

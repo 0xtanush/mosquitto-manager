@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	mosquitto "example.com/mosquitto-manager"
+	mosquitto "github.com/0xtanush/mosquitto-manager"
 )
 
 func main() {
